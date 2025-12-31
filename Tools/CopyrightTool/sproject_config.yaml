@@ -1,0 +1,10 @@
+copyright: cannot206
+rootPath: ../../Source/
+excludePaths: []
+fileExtensions:
+- .cs
+- .cpp
+- .h
+- .c
+- .go
+- .hpp

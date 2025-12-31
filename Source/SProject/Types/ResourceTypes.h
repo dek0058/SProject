@@ -1,0 +1,29 @@
+﻿// Copyright (c) 2025 cannot206.
+
+#pragma once
+
+#include "CoreMinimal.h"
+
+#include "ResourceTypes.generated.h"
+
+USTRUCT(BlueprintType)
+struct MY_API FItem
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Key = INDEX_NONE;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Count = INDEX_NONE;
+
+	bool operator==(const FItem& Other) const
+	{
+		return Tie(Key, Count) == Tie(Other.Key, Other.Count);
+	}
+
+	bool operator<(const FItem& Other) const
+	{
+		return Tie(Key, Count) < Tie(Other.Key, Other.Count);
+	}
+};

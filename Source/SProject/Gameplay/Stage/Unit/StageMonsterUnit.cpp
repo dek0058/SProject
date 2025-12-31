@@ -1,0 +1,60 @@
+﻿// Copyright (c) 2025 cannot206.
+
+#include "StageMonsterUnit.h"
+// include Project
+#include "Gameplay/Stage/Stage.h"
+#include "Gameplay/Stage/Types/GameplayStageTypes.h"
+
+#include UE_INLINE_GENERATED_CPP_BY_NAME(StageMonsterUnit)
+
+void AStageMonsterUnit::OnInit()
+{
+}
+
+void AStageMonsterUnit::OnInitBaseStats()
+{
+	if (!IsValid(MonsterInfoContext))
+	{
+		UE_LOGFMT(LogStage, Warning, "%s: MonsterInfoContext not found", *GetName());
+		return;
+	}
+
+	/*TMap<EStageUnitAttribute, double> BaseStats;
+	auto Err = UStageTableHelper::GetStageMonsterBaseStats(
+		MonsterInfoContext->MonsterInfo.Index,
+		BaseStats
+	);
+	if (!GameCore::IsOK(Err))
+	{
+		return;
+	}
+
+	SetBaseStats(BaseStats);*/
+}
+
+void AStageMonsterUnit::Setup(FStageMonsterInfo NewMonsterInfo)
+{
+	EObjectFlags Flags = RF_Transient | RF_Public;
+	MonsterInfoContext = NewObject<UStageMonsterContext>(this, NAME_None, Flags);
+	MonsterInfoContext->MonsterInfo = NewMonsterInfo;
+}
+
+FGErrorInfo AStageMonsterUnit::K2_GetMonsterInfo(FStageMonsterInfo& MonsterInfo)
+{
+	if(!IsValid(MonsterInfoContext))
+	{
+		return GameCore::Throw(GameErr::POINTER_INVALID, TEXT("MonsterInfoContext"));
+	}
+
+	MonsterInfo = MonsterInfoContext->MonsterInfo;
+	return GameCore::Pass();
+}
+
+TOptional<FStageMonsterInfo> AStageMonsterUnit::GetMonsterInfo() const
+{
+	if (!IsValid(MonsterInfoContext))
+	{
+		return TOptional<FStageMonsterInfo>{};
+	}
+	return MonsterInfoContext->MonsterInfo;
+}
