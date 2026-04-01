@@ -9,3 +9,10 @@
     - [GGameCore](https://github.com/dek0058/GGameCore)
     - SProjectAssets - 게임 에셋(비공개 레포지토리)
 
+-- TODO
+
+https://dev.epicgames.com/documentation/ko-kr/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects
+ 이번에 언리얼 프로젝트 에셋 명명 규칙이 추가됨
+
+https://dev.epicgames.com/documentation/ko-kr/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine
+아직가지 언리얼 5.7은 vs2026을 지원하지 않음
