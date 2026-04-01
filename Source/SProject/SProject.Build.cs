@@ -27,8 +27,9 @@ public class SProject : ModuleRules
 				"UMG",
 				"AIModule",
 				"NavigationSystem",
-			}
-		);
+                "Paper2D",
+            }
+        );
 
 		PrivateDependencyModuleNames.AddRange(
 			new[] {

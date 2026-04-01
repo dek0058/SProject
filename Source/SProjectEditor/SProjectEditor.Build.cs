@@ -25,8 +25,9 @@ public class SProjectEditor : ModuleRules
 				"InputCore",
 				"Json",
 				"JsonUtilities",
-			}
-		);
+                "Paper2DEditor",
+            }
+        );
 
 		PrivateDependencyModuleNames.AddRange(
 			new[]
