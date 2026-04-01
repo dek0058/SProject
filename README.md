@@ -9,3 +9,7 @@
     - [GGameCore](https://github.com/dek0058/GGameCore)
     - SProjectAssets - 게임 에셋(비공개 레포지토리)
 
+-- TODO
+
+https://dev.epicgames.com/documentation/ko-kr/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects
+ 이번에 언리얼 프로젝트 에셋 명명 규칙이 추가됨
